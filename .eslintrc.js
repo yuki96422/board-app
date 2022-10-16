@@ -14,8 +14,13 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint',
+    'unused-imports'
   ],
   rules: {
+    'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error'
   }
 }
