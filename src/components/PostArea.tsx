@@ -1,5 +1,5 @@
 import { Input, HStack } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useCallback } from "react";
 
 import PostButton from "./PostButton";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const PostArea: FC = () => {
   const [name, setName] = useState("");
   const [post, setPost] = useState("");
   const dispatch = useDispatch();
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     dispatch(
       addPost({
         name: name,
@@ -19,7 +19,16 @@ const PostArea: FC = () => {
     );
     setName("");
     setPost("");
-  };
+  }, []);
+
+  const onChagePost = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setPost(e.target.value),
+    []
+  );
+  const onChangeName = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value),
+    []
+  );
 
   return (
     <HStack m={10}>
@@ -32,7 +41,7 @@ const PostArea: FC = () => {
         display="inline-block"
         placeholder="名前"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={onChangeName}
       ></Input>
       <Input
         h={10}
@@ -43,9 +52,9 @@ const PostArea: FC = () => {
         display="inline-block"
         placeholder="投稿内容"
         value={post}
-        onChange={(e) => setPost(e.target.value)}
+        onChange={onChagePost}
       ></Input>
-      <PostButton onClick={() => handleClick()}>投稿</PostButton>
+      <PostButton onClick={handleClick}>投稿</PostButton>
     </HStack>
   );
 };

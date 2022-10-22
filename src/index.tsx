@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import postsReducer from "./features/Posts"
+import postsReducer from "./features/Posts";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
-
 const store = configureStore({
   reducer: {
-    posts:postsReducer,
+    posts: postsReducer,
   },
 });
 

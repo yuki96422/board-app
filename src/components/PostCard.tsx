@@ -1,11 +1,9 @@
 import { VStack, Box, Heading } from "@chakra-ui/react";
 import { FC } from "react";
-type Props = {
-  name: string;
-  post: string;
-};
+import{PostData}  from "../types/PostData"
 
-const PostCard: FC<Props> = (props) => {
+
+const PostCard: FC<PostData> = (props) => {
   const { name, post } = props;
 
   return (
