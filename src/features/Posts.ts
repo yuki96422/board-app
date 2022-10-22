@@ -1,20 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PostData } from "../types/PostData";
 
-type PostData = {
-  id: number;
-  name: string;
-  post: string;
-};
-
-const initialState:Array<PostData> = [{
-  id:0,
-  name:"yamada",
-  post:"hello"
-},{
-  id:1,
-  name:"tanaka",
-  post:"hello"}]
-
+const initialState: Array<PostData> = [
+  {
+    name: "yamada",
+    post: "hello",
+  },
+  {
+    name: "tanaka",
+    post: "hello",
+  },
+];
 
 const postSlice = createSlice({
   name: "posts",
@@ -27,3 +23,4 @@ const postSlice = createSlice({
 });
 
 export default postSlice.reducer;
+export const {addPost} = postSlice.actions;

@@ -1,19 +1,30 @@
-import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import { configureStore } from "@reduxjs/toolkit";
+import { ChakraProvider, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 
+import { PostData } from "./types/PostData";
+import PostCard from "./components/PostCard";
+import Header from "./components/Header";
 import theme from "./theme/theme";
+import PostArea from "./components/PostArea";
 
-type PostData = {
-  id: number;
-  name: string;
-  post: string;
-};
+interface PostDataObject {
+  posts: Array<PostData>;
+}
 
 function App() {
-  const postList = useSelector((state:Array<PostData>)=>console.log(state.posts))
-  return <ChakraProvider theme={theme}>aa</ChakraProvider>;
+  const postList = useSelector((state: PostDataObject) => state.posts);
+
+  return (
+    <ChakraProvider theme={theme}>
+      <Header>React / Typescript掲示板アプリ</Header>
+      <VStack>
+        <PostArea />
+        {postList.map((post,index) => (
+          <PostCard key={index} name={post.name} post={post.post} />
+        ))}
+      </VStack>
+    </ChakraProvider>
+  );
 }
 
 export default App;
