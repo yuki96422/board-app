@@ -8,10 +8,10 @@ import theme from "./theme/theme";
 import PostArea from "./components/PostArea";
 
 interface PostDataObject {
-  posts: Array<PostData>;
+  posts: Array<PostData>
 }
 
-function App() {
+function App () {
   const postList = useSelector((state: PostDataObject) => state.posts);
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <Header>React / Typescript掲示板アプリ</Header>
       <VStack>
         <PostArea />
-        {postList.map((post,index) => (
+        {postList.map((post, index) => (
           <PostCard key={index} name={post.name} post={post.post} />
         ))}
       </VStack>

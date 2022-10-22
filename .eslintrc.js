@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/type-annotation-spacing': 'off',
-    '@typescript-eslint/consistent-type-definitions': 'off'
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off'
   }
 }
