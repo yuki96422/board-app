@@ -1,8 +1,7 @@
 import { Input, HStack } from "@chakra-ui/react";
-import { FC, useCallback } from "react";
+import { FC, useCallback, useState } from "react";
 
 import PostButton from "./PostButton";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "../features/Posts";
 
