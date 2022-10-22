@@ -13,13 +13,13 @@ const PostArea: FC = () => {
   const handleClick = useCallback(() => {
     dispatch(
       addPost({
-        name: name,
-        post: post,
+        name,
+        post
       })
     );
     setName("");
     setPost("");
-  }, []);
+  }, [name, post]);
 
   const onChangePost = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => setPost(e.target.value),

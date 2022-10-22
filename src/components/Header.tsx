@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  children: string;
+  children: string
 };
 
 const Header: FC<Props> = ({ children }) => {
