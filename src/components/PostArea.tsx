@@ -21,7 +21,7 @@ const PostArea: FC = () => {
     setPost("");
   }, []);
 
-  const onChagePost = useCallback(
+  const onChangePost = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => setPost(e.target.value),
     []
   );
@@ -52,7 +52,7 @@ const PostArea: FC = () => {
         display="inline-block"
         placeholder="投稿内容"
         value={post}
-        onChange={onChagePost}
+        onChange={onChangePost}
       ></Input>
       <PostButton onClick={handleClick}>投稿</PostButton>
     </HStack>
