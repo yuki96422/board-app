@@ -4,16 +4,27 @@ import { FC, useCallback, useState } from "react";
 import PostButton from "./PostButton";
 import { useDispatch } from "react-redux";
 import { addPost } from "../features/Posts";
+import useErrorMessage from "../hooks/useErrorMessage";
 
 const PostArea: FC = () => {
   const [name, setName] = useState("");
   const [post, setPost] = useState("");
   const dispatch = useDispatch();
+  const { showErrorMessage } = useErrorMessage();
+
   const handleClick = useCallback(() => {
+    if (name === "" || post === "") {
+      showErrorMessage({
+        title: "入力されていない項目があります",
+        status: "error",
+        duration: 3000,
+      });
+      return;
+    }
     dispatch(
       addPost({
         name,
-        post
+        post,
       })
     );
     setName("");
