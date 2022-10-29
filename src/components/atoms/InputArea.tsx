@@ -18,7 +18,7 @@ const InputArea: FC<Props> = (props) => {
       shadow="md"
       bgColor="white"
       placeholder={placeholdername}
-      value={name || post}
+      value={name ?? post}
       onChange={onChange}
     ></Input>
   );
