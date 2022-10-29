@@ -2,8 +2,8 @@ import { FC } from "react";
 import { Input } from "@chakra-ui/react";
 
 type Props = {
-  name :string
-  post :string
+  name ?:string
+  post ?:string
   placeholdername : string
   width : number
   onChange : (e: React.ChangeEvent<HTMLInputElement>) => void
