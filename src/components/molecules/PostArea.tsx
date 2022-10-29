@@ -1,10 +1,11 @@
-import { Input, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { FC, useCallback, useState } from "react";
 
-import PostButton from "./PostButton";
+import MainButton from "../atoms/MainButton";
 import { useDispatch } from "react-redux";
-import { addPost } from "../features/Posts";
-import useErrorMessage from "../hooks/useErrorMessage";
+import { addPost } from "../../features/Posts";
+import useErrorMessage from "../../hooks/useErrorMessage";
+import InputArea from "../atoms/InputArea";
 
 const PostArea: FC = () => {
   const [name, setName] = useState("");
@@ -42,29 +43,9 @@ const PostArea: FC = () => {
 
   return (
     <HStack m={10}>
-      <Input
-        h={10}
-        w={150}
-        shadow="md"
-        bgColor="white"
-        textAlign="left"
-        display="inline-block"
-        placeholder="名前"
-        value={name}
-        onChange={onChangeName}
-      ></Input>
-      <Input
-        h={10}
-        w={320}
-        shadow="md"
-        bgColor="white"
-        textAlign="left"
-        display="inline-block"
-        placeholder="投稿内容"
-        value={post}
-        onChange={onChangePost}
-      ></Input>
-      <PostButton onClick={handleClick}>投稿</PostButton>
+      <InputArea name={name} width={140} placeholdername="名前" onChange={onChangeName} />
+      <InputArea name={name} width={340} placeholdername="投稿内容" onChange={onChangePost} />
+      <MainButton onClick={handleClick} color="white" colorScheme >投稿</MainButton>
     </HStack>
   );
 };

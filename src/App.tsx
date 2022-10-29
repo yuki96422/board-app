@@ -2,10 +2,10 @@ import { ChakraProvider, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 
 import { PostData } from "./types/PostData";
-import PostCard from "./components/PostCard";
-import Header from "./components/Header";
+import PostCard from "./components/molecules/PostCard";
+import Header from "./components/templates/Header";
 import theme from "./theme/theme";
-import PostArea from "./components/PostArea";
+import PostArea from "./components/molecules/PostArea";
 
 interface PostDataObject {
   posts: Array<PostData>
