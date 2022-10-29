@@ -15,13 +15,12 @@ import { FC } from "react";
 //   );
 // };
 
-type Props = JSX.IntrinsicElements['button'] & { children:string }
+type Props = JSX.IntrinsicElements["button"] & { children: string } & { width: number } & { backgroundColor: string };
 
-const MainButton:FC<Props> = (props) => {
-  const { children, ...rest } = props
-  return (
-    <Button {...rest} >{ children }</Button>
-  )
-}
+const MainButton: FC<Props> = (props) => {
+  const { children, ...rest } = props;
+
+  return <Button {...rest}>{children}</Button>;
+};
 
 export default MainButton;

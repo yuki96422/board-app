@@ -43,9 +43,22 @@ const PostArea: FC = () => {
 
   return (
     <HStack m={10}>
-      <InputArea name={name} width={140} placeholdername="名前" onChange={onChangeName} />
-      <InputArea name={name} width={340} placeholdername="投稿内容" onChange={onChangePost} />
-      <MainButton onClick={handleClick} color="white" colorScheme >投稿</MainButton>
+      <InputArea
+        name={name}
+        width={140}
+        placeholdername="名前"
+        onChange={onChangeName}
+      />
+      <InputArea
+        name={name}
+        width={340}
+        placeholdername="投稿内容"
+        onChange={onChangePost}
+      />
+      <MainButton onClick={handleClick} color="white" width={100} backgroundColor="teal">
+        投稿
+      </MainButton>
+      <p></p>
     </HStack>
   );
 };
