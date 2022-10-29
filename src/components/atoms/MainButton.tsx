@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, ButtonProps } from "@chakra-ui/react";
 import { FC } from "react";
 
 // type Props = {
@@ -15,7 +15,7 @@ import { FC } from "react";
 //   );
 // };
 
-type Props = JSX.IntrinsicElements["button"] & { children: string } & { width: number } & { backgroundColor: string };
+type Props = ButtonProps & { children: string };
 
 const MainButton: FC<Props> = (props) => {
   const { children, ...rest } = props;
