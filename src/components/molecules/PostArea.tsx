@@ -50,7 +50,7 @@ const PostArea: FC = () => {
         onChange={onChangeName}
       />
       <InputArea
-        name={name}
+        post={post}
         width={340}
         placeholdername="投稿内容"
         onChange={onChangePost}

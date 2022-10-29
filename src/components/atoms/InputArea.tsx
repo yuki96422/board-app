@@ -3,13 +3,14 @@ import { Input } from "@chakra-ui/react";
 
 type Props = {
   name :string
+  post :string
   placeholdername : string
   width : number
   onChange : (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const InputArea: FC<Props> = (props) => {
-  const { name, onChange, width, placeholdername } = props;
+  const { name, post, onChange, width, placeholdername } = props;
   return (
     <Input
       h={10}
@@ -17,7 +18,7 @@ const InputArea: FC<Props> = (props) => {
       shadow="md"
       bgColor="white"
       placeholder={placeholdername}
-      value={name}
+      value={name || post}
       onChange={onChange}
     ></Input>
   );
