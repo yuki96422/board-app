@@ -55,7 +55,7 @@ const PostArea: FC = () => {
         placeholdername="投稿内容"
         onChange={onChangePost}
       />
-      <MainButton onClick={handleClick} color="white" width={100} backgroundColor="teal">
+      <MainButton onClick={handleClick} color="white" width={100} backgroundColor="teal" _hover={{ opacity: 0.7 }}>
         投稿
       </MainButton>
       <p></p>
